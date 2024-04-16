@@ -24,6 +24,7 @@ public class TransactionController {
         //logger.info("Processing transaction: " + transactionDTO.getCardNumber() + " with amount: " + transactionDTO.getAmount());
         System.out.println("Processing transaction: " + transactionDTO.getCardNumber() + " with amount: " + transactionDTO.getAmount());
         //return transactionService.processTransaction(transactionDTO);
+        //this is a new comment
         return null;
     }
 }
