@@ -1,34 +1,64 @@
 package com.aciworldwide.aclabs22.entities;
 
 public class Accounts {
+    final long id;
+    final String cardNumber;
+    double amount;
+    int dailyTxLimit;
+    double dailyTxSumLimit;
+    int dailyTx;
+    double dailyTxSum;
 
-    private long id;
-    private String cardNumber;
-    private double amount;
-    private int dailyTxLimit;
-    private double dailyTxSumLimit;
-    private int dailyTx;
-    private double dailyTxSum;
-
-    public Accounts(long id, String cardNumber, int dailyTxLimit, double amount, double dailyTxSumLimit, int dailyTx, double dailyTxSum) {
+    public Accounts(long id, String cardNumber, double amount, int dailyTxLimit, double dailyTxSumLimit, int dailyTx, double dailyTxSum) {
         this.id = id;
         this.cardNumber = cardNumber;
-        this.dailyTxLimit = dailyTxLimit;
         this.amount = amount;
+        this.dailyTxLimit = dailyTxLimit;
         this.dailyTxSumLimit = dailyTxSumLimit;
         this.dailyTx = dailyTx;
         this.dailyTxSum = dailyTxSum;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public long getId() {
+    public long id() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+
+    public double amount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount -= amount;
+    }
+
+    public String cardNumber() {
+        return cardNumber;
+    }
+
+
+    public int dailyTxLimit() {
+        return dailyTxLimit;
+    }
+
+
+    public double dailyTxSumLimit() {
+        return dailyTxSumLimit;
+    }
+
+    public int dailyTx() {
+        return dailyTx;
+    }
+
+    public void setDailyTx() {
+        dailyTx++;
+    }
+
+    public double dailyTxSum() {
+        return dailyTxSum;
+    }
+
+    public void setDailyTxSum(double dailyTxSum) {
+        this.dailyTxSum += dailyTxSum;
     }
 }

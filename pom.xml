@@ -56,8 +56,27 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version> 1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
 
 <!--		<dependency>-->
+<!--			<groupId>ch.qos.logback</groupId>-->
+<!--			<artifactId>logback-classic</artifactId>-->
+<!--			<version>1.4.14</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.33</version>
+		</dependency>
+
+		<!--		<dependency>-->
 <!--			<groupId>org.springframework.data</groupId>-->
 <!--			<artifactId>spring-data-jpa</artifactId>-->
 <!--		</dependency>-->
@@ -79,6 +98,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>16</source>
+					<target>16</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
