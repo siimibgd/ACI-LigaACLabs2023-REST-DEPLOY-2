@@ -1,5 +1,7 @@
 package com.aciworldwide.aclabs22.dto;
 
+import com.aciworldwide.aclabs22.entities.Transactions;
+
 import java.sql.Timestamp;
 
 public class TransactionDTO {
@@ -9,6 +11,14 @@ public class TransactionDTO {
     private Timestamp timestamp;
     private String returnCode;
 
+    public TransactionDTO() {}
+
+    public TransactionDTO(Transactions transaction) {
+        cardNumber=transaction.cardNumber();
+        amount=transaction.amount();
+        timestamp=transaction.timestamp();
+        returnCode=transaction.returnCode();
+    }
 
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;

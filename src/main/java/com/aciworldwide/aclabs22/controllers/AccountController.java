@@ -1,32 +1,40 @@
 package com.aciworldwide.aclabs22.controllers;
 
+import com.aciworldwide.aclabs22.dto.AccountDTO;
 import com.aciworldwide.aclabs22.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-
+@RestController
+@RequestMapping("/accounts")
 public class AccountController {
 
     @Autowired
     AccountService accountService;
 
     //request
-    public ResponseEntity<?> getAccount() {
-        return accountService.getAccount();
+    @GetMapping(path="/{cardNumber}")
+    public ResponseEntity<?> getAccount(String cardNumber) {
+        return accountService.getAccount(cardNumber);
     }
-
+    @GetMapping
+    public ResponseEntity<?> getAllAccounts() {
+        return accountService.getAllAccounts();
+    }
     // create
-    public ResponseEntity<?> addAccount() {
-        return accountService.addAccount();
+    @PostMapping
+    public ResponseEntity<?> addAccount(@RequestBody AccountDTO accountDTO) {
+        return accountService.addAccount(accountDTO);
     }
 
-    public ResponseEntity<?> updateAccount() {
-        return accountService.updateAccount();
+    @PutMapping
+    public ResponseEntity<?> updateAccount(@RequestBody AccountDTO accountDTO) {
+        return accountService.updateAccount(accountDTO);
     }
 
-    public ResponseEntity<?> deleteAccount() {
-        return accountService.deleteAccount();
+    @DeleteMapping
+    public ResponseEntity<?> deleteAccount(@RequestBody AccountDTO accountDTO) {
+        return accountService.deleteAccount(accountDTO);
     }
 }
